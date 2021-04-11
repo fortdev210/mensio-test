@@ -2,7 +2,7 @@
 
 #### 1) Download the source code from the github repository.
 
-#### 2) Enter to the backend folder and run this command "npm run dev". Then you will see the server is ready. If you dont have db file, first run "npm run setup" and this will create dev.db file in project folder.
+#### 2) Enter to the backend folder and run this command "npm run dev". Then you will see the server is ready. If you dont have db file, first run "npm run setup" and this will create dev.db file in project folder. (For your convenience to test, I pushed db file to the github and this should be avoided when working on real project.)
 
 #### 3)Enter to the front end folder and run this command "npm start". Then you can see the app is running on your browser. Or you can type the "localhost:3000" on browser url input.
 
