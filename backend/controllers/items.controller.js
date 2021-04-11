@@ -48,8 +48,23 @@ const updateItem = async (req, res) => {
   }
 };
 
+const deleteItem = async (req, res) => {
+  try {
+    const { id } = req.body;
+    const deleteItem = await prisma.items.delete({
+      where: {
+        id: id,
+      },
+    });
+    res.json(deleteItem).status(204);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 module.exports = {
   getItems,
   createItem,
   updateItem,
+  deleteItem,
 };

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { AddItemWrapper, TodoInput, AddBtn } from "./AddItem.styles";
 
 const AddItem = ({ setItems, items }) => {
   const [item, setItem] = useState("");
@@ -33,16 +34,19 @@ const AddItem = ({ setItems, items }) => {
   };
 
   return (
-    <div>
-      <input
+    <AddItemWrapper>
+      <TodoInput
         type="text"
         name="text"
-        placeholder="What needs to be done"
+        placeholder="What needs to be done?"
         value={item}
         onChange={onChange}
+        className="input-area"
       />
-      <button onClick={addItem}>Add</button>
-    </div>
+      <AddBtn onClick={addItem} className="add-btn">
+        Add
+      </AddBtn>
+    </AddItemWrapper>
   );
 };
 

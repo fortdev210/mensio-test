@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import AddItem from "../components/AddItem";
-import TodoItem from "../components/TodoItem";
+import AddItem from "../components/AddItem.jsx";
+import TodoItem from "../components/TodoItem.jsx";
+import ScheduleWrapper from "./Schedule.styles";
 
 const Schedule = () => {
   const [items, setItems] = useState([]);
@@ -23,23 +24,17 @@ const Schedule = () => {
   }, []);
 
   return (
-    <div>
-      <h2>To Do</h2>
+    <ScheduleWrapper>
+      <h2 className="title">To Do</h2>
       <AddItem setItems={setItems} items={items} />
       <div>
         {items
           ? items.map((item, id) => {
-              return (
-                <TodoItem
-                  content={item.content}
-                  key={id}
-                  completed={item.completed}
-                />
-              );
+              return <TodoItem item={item} key={id} />;
             })
           : ""}
       </div>
-    </div>
+    </ScheduleWrapper>
   );
 };
 

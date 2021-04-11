@@ -1,10 +1,9 @@
 import "./App.css";
-import Schedule from "./containers/Schedule";
+import Schedule from "./containers/Schedule.jsx";
 
 function App() {
   return (
     <div className="App">
-      <h1>To do list</h1>
       <Schedule />
     </div>
   );
