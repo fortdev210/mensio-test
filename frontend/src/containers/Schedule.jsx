@@ -9,7 +9,7 @@ const Schedule = () => {
 
   const getItems = async () => {
     axios
-      .get("http://localhost:3001/items/")
+      .get("/items/")
       .then(function (response) {
         setItems(response.data);
       })

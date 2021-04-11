@@ -16,7 +16,7 @@ const AddItem = ({ setItems, items }) => {
     }
     axios
       .post(
-        "http://localhost:3001/items",
+        "/items",
         {
           content: item,
           completed: false,

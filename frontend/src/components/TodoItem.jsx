@@ -13,7 +13,7 @@ const TodoItem = ({ item, setItems }) => {
     if (item.completed) return;
     if (e.target.id !== "remove") {
       axios
-        .put(`http://localhost:3001/items/${item.id}`, {
+        .put(`/items/${item.id}`, {
           id: item.id,
         })
         .then(function (response) {
@@ -29,7 +29,7 @@ const TodoItem = ({ item, setItems }) => {
   const removeTodoItem = (e) => {
     if (e.target.id === "remove") {
       axios
-        .delete(`http://localhost:3001/items/${item.id}`)
+        .delete(`/items/${item.id}`)
         .then(function (response) {
           alert("Successfully removed the task.");
           setItems(response.data);
