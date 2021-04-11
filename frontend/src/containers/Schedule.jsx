@@ -30,7 +30,7 @@ const Schedule = () => {
       <div>
         {items
           ? items.map((item, id) => {
-              return <TodoItem item={item} key={id} />;
+              return <TodoItem item={item} key={id} setItems={setItems} />;
             })
           : ""}
       </div>

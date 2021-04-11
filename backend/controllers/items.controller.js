@@ -42,7 +42,8 @@ const updateItem = async (req, res) => {
         completed: true,
       },
     });
-    res.json(updateItem).status(204);
+    const items = await prisma.items.findMany();
+    res.json(items).status(204);
   } catch (error) {
     console.log(error);
   }
@@ -50,13 +51,14 @@ const updateItem = async (req, res) => {
 
 const deleteItem = async (req, res) => {
   try {
-    const { id } = req.body;
+    const id = parseInt(req.params.id);
     const deleteItem = await prisma.items.delete({
       where: {
         id: id,
       },
     });
-    res.json(deleteItem).status(204);
+    const items = await prisma.items.findMany();
+    res.json(items).status(204);
   } catch (error) {
     console.log(error);
   }
