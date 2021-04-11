@@ -1,0 +1,23 @@
+{
+  "name": "server.js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "setup": "node database.js && prisma generate",
+    "dev": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^2.20.1",
+    "body-parser": "^1.19.0",
+    "compress": "^0.99.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "prisma": "^2.20.1",
+    "sqlite3": "^5.0.2"
+  }
+}
